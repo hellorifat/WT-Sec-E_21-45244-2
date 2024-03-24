@@ -18,38 +18,32 @@
                 
                 <td style="width:60%; vertical-align: top" align="center">
                 <br>
-                
-    <form  style="width:50%" method="POST" action="../controller/regVerify.php" enctype="">
-        <fieldset>
-            <legend><strong>Registering as a Farmer</strong></legend>
-        <table>
-        <tr>
-        <td>Phone number: </td> <td> <input type="tel" name="phone" value="" placeholder="Your phone no."></td>
+                <form style="width:50%" method="POST" action="../controller/dwloginVerify.php" enctype="">
+                    <fieldset>
+                        <legend><strong>Logging in as Wholesaler</strong></legend>
+                        <table>
+                        <tr>
+                    <td>
+                    <strong>Phone:</strong> </td><td><input type="tel" name="phone" value="" placeholder="Enter registered phone"></td>
 </tr>
 <tr>
-        <td>Name: </td> <td><input type="text" name="name" value="" placeholder="Your name"></td>
-        </tr><tr>
-        <td>NID: </td> <td><input type="number" name="nid" value="" placeholder="10 digit Smart ID"></td>
-        </tr><tr>
-        <td>Password: <td><input type="password" name="password" value="" placeholder="Upper, Lower Case, Digit and Special character"></td>
-        </tr><tr>
-        <td>Confirm Password: </td><td><input style="height:20; width:40" type="password" name="cfpassword" value="" placeholder="Enter the password again">
-        </tr><tr>
-        <td colspan="2">
-        <input type="checkbox" id="vehicle1" name="tnc1" value="Bike" checked>
-        <label for="tnc1"> I agree to the <a href="#">terms and conditions</a></label><br><br>
-        </tr><tr>
-        <tr>
-            <td colspan="2" align=right>
-        <input type="submit" name="submit" value="Register" style="background-color:#0B5345; color:white; padding:5px 30px">
-</td>
-    </tr>
-    </table>
-    </fieldset>
-    </form>
-    <br>
-        <br>
-            <p align=center> Already a Member? <a href="http://localhost:8085/pw2/view/dflogin.php">Login here...</a></p>
+                    <td>
+                    <strong>Password:</strong> </td><td><input type="password" name="password" value="" placeholder="Enter password"></td>
+</tr>
+<tr>
+                    <td align="right" colspan="2">
+                    <input type="submit" name="submit" value="Submit" style="background-color:#0B5345; color:white; padding:5px 30px">
+                    </td>
+</tr>
+<tr>
+    <td align="right" colspan="2"> Forgot Password? <a href="http://localhost:8085/pw2/view/dwreset.php"> Reset Now</a></td>
+</tr>
+</table>
+</fieldset>
+                </form>
+                <br>
+                <br>
+            <p align=center> Not registered yet? <a href="http://localhost:8085/pw2/view/dwreg.php">Register here...</a></p>
 
                 </td>
                 

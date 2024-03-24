@@ -1,7 +1,7 @@
 <?php 
     //session_start();
 
-    if(!isset($_COOKIE['flag'])){
+    if(!isset($_COOKIE['fflag'])){
         header('location: dflogin.php');
     }
 

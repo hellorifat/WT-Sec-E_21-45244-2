@@ -45,16 +45,16 @@
     else {
     
         
-        $farmer=['phone'=>$phone, 'name'=>$name, 'nid'=>$nid, 'password'=>$password];
+        $investor=['phone'=>$phone, 'name'=>$name, 'nid'=>$nid, 'password'=>$password];
         //$sql = "INSERT INTO user VALUES('{$user['userid']}', '{$user['password']}', '{$user['name']}', '{$user['email']}'), '{$user['usertype']}')";
 
         //$status = mysqli_query($con, $sql);
-        $status=regFarmer($farmer);
+        $status=regInvestor($investor);
 
 
         if($status) {
             //$_SESSION['user'] = $user;
-            header('location: ../view/dflogin.php');
+            header('location: ../view/dilogin.php');
         } else {
             echo "<h2> Database Error! </h2>";
         }

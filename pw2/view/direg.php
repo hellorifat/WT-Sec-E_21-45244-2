@@ -19,9 +19,9 @@
                 <td style="width:60%; vertical-align: top" align="center">
                 <br>
                 
-    <form  style="width:50%" method="POST" action="../controller/regVerify.php" enctype="">
+    <form  style="width:50%" method="POST" action="../controller/iregVerify.php" enctype="">
         <fieldset>
-            <legend><strong>Registering as a Farmer</strong></legend>
+            <legend><strong>Registering as an Investor</strong></legend>
         <table>
         <tr>
         <td>Phone number: </td> <td> <input type="tel" name="phone" value="" placeholder="Your phone no."></td>
@@ -49,7 +49,7 @@
     </form>
     <br>
         <br>
-            <p align=center> Already a Member? <a href="http://localhost:8085/pw2/view/dflogin.php">Login here...</a></p>
+            <p align=center> Already a Member? <a href="http://localhost:8085/pw2/view/dilogin.php">Login here...</a></p>
 
                 </td>
                 
