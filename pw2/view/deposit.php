@@ -1,12 +1,11 @@
 <?php 
-    session_start();
+    //session_start();
 
-    if(!isset($_COOKIE['fflag'])){
-        header('location: dflogin.php');
-    }
+    //if(!isset($_COOKIE['fflag']) or !isset($_COOKIE['wflag']) or !isset($_COOKIE['iflag'])){
+        //header('location: /pw2/landing.php');
+    //}
 
 ?>
-
 <html lang="en">
 <head>
     <title>Welcome Home</title>
@@ -17,7 +16,7 @@
             <table style="width:100%; border:0, align:center">
                 <tr style="height:150px">
                     <td><a href="#"><img src="http://localhost:8085/pw2/dflogo.png" alt="DigiFarm" width="80" height="80"></a></td>
-                    <td><h1>Welcome to DigiFarm Dashboard</h1></td>
+                    <td><h1>DigiFarm Payment Methods</h1></td>
                     <td><a href="../controller/dfLogout.php">Logout</a><td>
 
                 </tr>
@@ -32,7 +31,7 @@
                 
                 <tr><td><a href="harvest.php">Harvest </a></td></tr>
                 
-                <tr><td><a href="dfFund.php">Fund Management </a></td></tr>
+                <tr><td><a href="fund.php">Fund Management </a></td></tr>
                 
                 <tr><td><a href="pest.php">Profit Estimator </a></td></tr>
                 
@@ -48,50 +47,15 @@
                 </td>
 
                 <td style="width:60%; vertical-align: top" align="center">
-                <br><br>
-                <table style="font-size:150%">
+                <table style="width:50%; height:100px" align="center" border=0px>
+                    <br><br>
                     <tr align="center">
-                        <td>6</td>
-                        <td>67</td>
-                        <td>2</td>
+                    <td colspan="4" style="color:#873600; font-size:125%"><strong> Choose a Method:</strong></td>
+                        <td><a href="/pw2/view/mfsPay"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">MFS</button></a></td>
+                        <td><a href="/pw2/view/cardPay.php"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">CARD</button></a></td>
                     </tr>
-                    <tr align="center">
-                        <td>Pending Order</td>
-                        <td>Delivered</td>
-                        <td>On Hold</td>
-                    </tr>
-                    <tr align="center">
-                        <td>5K</td>
-                        <td>32K</td>
-                        <td>67K</td>
-                    </tr>
-                    <tr align="center">
-                        <td>Payable</td>
-                        <td>Incoming Payment</td>
-                        <td>Incoming Investment</td>
-                    </tr>
-                    <tr align="center">
-                        <td>328K</td>
-                        <td>37K</td>
-                        <td>295K</td>
-                    </tr>
-                    <tr align="center">
-                        <td>Total Balance</td>
-                        <td>Block Amount</td>
-                        <td>Withdrawable Amount</td>
-                    </tr>
-                    <tr align="center">
-                        <td>106K</td>
-                        <td>297K</td>
-                        <td>191K</td>
-                    </tr>
-                    <tr align="center">
-                        <td>Estd. Expense</td>
-                        <td>Estd. Sale</td>
-                        <td>Estd. Income</td>
-                    </tr>
+
                 </table>
-                
                 </td>
                 
                 <td style="width:20%; vertical-align: top"><strong>External Links</strong><br><ul>

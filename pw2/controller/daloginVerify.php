@@ -11,10 +11,10 @@
     }
 
     else {
-        $status=loginFarmer($phone, $password);
+        $status=loginAdmin($phone, $password);
         if ($status){
-            setcookie('fflag', 'true',time()+3600,'/');
-            header('location:../view/fhome.php');
+            setcookie('aflag', 'true',time()+3600,'/');
+            header('location:../view/ahome.php');
         }
         else{
             echo"Incorrect username or password";
