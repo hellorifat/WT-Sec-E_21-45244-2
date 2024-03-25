@@ -1,6 +1,7 @@
 <?php
 
     require_once('../model/userModel.php');
+    require_once('../model/paymentModel.php');
 
     $phone=$_REQUEST['phone'];
     $amount=$_REQUEST['amount'];
@@ -10,31 +11,38 @@
     $otp=$_REQUEST['otp'];
     $length = strlen($card);
 
-    for(int i=0; i<$length; ++i){
+    $chkdigit=1;
+    $userExist=checkUser($phone);
+
+    /*for(int i=0; i<$length; ++i){
 
             if($card[i]<'0' || $card[i]>'9'){
             $chkdigit=0;
             }
-    }
+    }*/
     
-    if($phone=="" || $password=="" || ){
-        echo "Null Username or Password";
+    if($phone=="" || $amount=="" || $card=="" || $cvc="" || $expiry="" || $otp=""){
+        echo "All fields are required";
 
     }
 
-    else if($chkdigit=0){
+    /*else if($chkdigit=0){
         echo "Card number has to be digits";
-    }
+    }*/
 
+    else if (!$userExist){
+        echo "User doesn't exist";
+    }
 
     else {
-        $status=loginFarmer($phone, $password);
+        $status=verifyCard($phone, $amount, $card, $cvc, $expiry, $otp);
         if ($status){
-            setcookie('fflag', 'true',time()+3600,'/');
-            header('location:../view/fhome.php');
+            //setcookie('fflag', 'true',time()+3600,'/');
+            //header('location:../view/fhome.php');
+            echo"Successful";
         }
         else{
-            echo"Incorrect username or password";
+            echo"Incorrect Data";
         }
     }
 ?>
