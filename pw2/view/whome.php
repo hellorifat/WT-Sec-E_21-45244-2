@@ -1,8 +1,8 @@
 <?php 
     session_start();
 
-    if(!isset($_COOKIE['fflag'])){
-        header('location: dflogin.php');
+    if(!isset($_COOKIE['wflag'])){
+        header('location: dwlogin.php');
     }
 
 ?>
@@ -17,8 +17,8 @@
             <table style="width:100%; border:0, align:center">
                 <tr style="height:150px">
                     <td><a href="#"><img src="http://localhost:8085/pw2/dflogo.png" alt="DigiFarm" width="80" height="80"></a></td>
-                    <td><h1>Welcome to DigiFarm Dashboard</h1></td>
-                    <td><a href="../controller/dfLogout.php">Logout</a><td>
+                    <td><h1>Welcome to DigiFarm Dashboard: Wholesaler</h1></td>
+                    <td><a href="../controller/dwLogout.php">Logout</a><td>
 
                 </tr>
                 <tr style="height:600px" >

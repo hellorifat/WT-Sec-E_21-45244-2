@@ -1,12 +1,11 @@
 <?php 
-    session_start();
+    //session_start();
 
-    if(!isset($_COOKIE['fflag'])){
-        header('location: dflogin.php');
-    }
+    //if(!isset($_COOKIE['fflag']) or !isset($_COOKIE['wflag']) or !isset($_COOKIE['iflag'])){
+        //header('location: /pw2/landing.php');
+    //}
 
 ?>
-
 <html lang="en">
 <head>
     <title>Welcome Home</title>
@@ -32,7 +31,7 @@
                 
                 <tr><td><a href="harvest.php">Harvest </a></td></tr>
                 
-                <tr><td><a href="dfFund.php">Fund Management </a></td></tr>
+                <tr><td><a href="fund.php">Fund Management </a></td></tr>
                 
                 <tr><td><a href="pest.php">Profit Estimator </a></td></tr>
                 
@@ -42,56 +41,45 @@
                 
                 <tr><td><a href="fhistory.php">History </a></td></tr>
                 
-                <tr><td><a href="editProfile.php">Edit Profile </a></td></tr>
+                <tr><td><a href="fprofile.php">My Profile </a></td></tr>
+                
+                <td>
                 
     </table>
                 </td>
 
                 <td style="width:60%; vertical-align: top" align="center">
-                <br><br>
-                <table style="font-size:150%">
-                    <tr align="center">
-                        <td>6</td>
-                        <td>67</td>
-                        <td>2</td>
+                <form style="width:50%" method="POST" action="../controller/mfsVerify.php" enctype="">
+                    <fieldset>
+                        <legend><strong>Paying With Bkash</strong></legend>
+                        <table>
+                        <tr>
+                        <td><strong>Phone:</strong></td><td><input type="tel" name="phone" value="" placeholder="017xxxxxxxx" pattern="[0-9\s]{11}" 
+                     maxlength="11"></td></td>
+    </tr>
+    <tr>
+                        <td>
+                        <strong>Amount:</strong></td><td><input type="number" name="amount" value="" placeholder="Enter Amount" ></td>
+                    
+    </tr>
+    <tr>
+                    <td><strong>Wallet:</strong> </td><td><input type="tel" name="wallet"  value="" inputmode="numeric" pattern="[0-9\s]{11}" 
+                     maxlength="16" placeholder="017xxxxxxxx" required>
+                </td>
                     </tr>
-                    <tr align="center">
-                        <td>Pending Order</td>
-                        <td>Delivered</td>
-                        <td>On Hold</td>
-                    </tr>
-                    <tr align="center">
-                        <td>5K</td>
-                        <td>32K</td>
-                        <td>67K</td>
-                    </tr>
-                    <tr align="center">
-                        <td>Payable</td>
-                        <td>Incoming Payment</td>
-                        <td>Incoming Investment</td>
-                    </tr>
-                    <tr align="center">
-                        <td>328K</td>
-                        <td>37K</td>
-                        <td>295K</td>
-                    </tr>
-                    <tr align="center">
-                        <td>Total Balance</td>
-                        <td>Block Amount</td>
-                        <td>Withdrawable Amount</td>
-                    </tr>
-                    <tr align="center">
-                        <td>106K</td>
-                        <td>297K</td>
-                        <td>191K</td>
-                    </tr>
-                    <tr align="center">
-                        <td>Estd. Expense</td>
-                        <td>Estd. Sale</td>
-                        <td>Estd. Income</td>
-                    </tr>
-                </table>
-                
+                    <tr>
+                    <td><strong>Pin:</strong></td><td><input type="number" name="pin" value="" placeholder="xxxx" pattern="[0-9\s]{4}" 
+                     maxlength="3"></td> 
+                    <td>
+                    <strong>OTP:</strong> </td><td><input type="otp" name="otp" value="" placeholder="xxxxxx" pattern="[0-9\s]{4,6}" 
+                     maxlength="6"></td>
+</tr>
+<tr>
+                    <td align="right" colspan="2">
+                    <input type="submit" name="deposit" value="Deposit" style="background-color:#0B5345; color:white; padding:5px 30px">
+                    </td>
+                </tr>
+    </table>
                 </td>
                 
                 <td style="width:20%; vertical-align: top"><strong>External Links</strong><br><ul>
@@ -102,7 +90,7 @@
                 </td>
                 </tr>
                 <tr>
-                    <td colspan="3" style="height:50px; text-align:center"> DigiFarm Copyright@2024</td>
+                    <td colspan="3" style="height:50px; text-align:center"> DigiFarm Copyright©2024</td>
                 </tr>
         </table>
 </body>

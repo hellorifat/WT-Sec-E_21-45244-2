@@ -20,8 +20,17 @@
                 <br>
                 <form style="width:50%" method="POST" action="../controller/dfloginVerify.php" enctype="">
                     <fieldset>
-                        <legend><strong>Logging in as Farmer</strong></legend>
+                        <legend><strong><h2>Log in as</h2></strong></legend>
                         <table>
+
+
+                        <tr>
+                            <td colspan="2"><input type="radio" name="usertype" value="farmer" checked/> Farmer
+                            <input type="radio" name="usertype" value="wholesaler"/> Wholesaler
+                            <input type="radio" name="usertype" value="investor"/> Investor
+                            <input type="radio" name="usertype" value="admin"/> Admin
+</td>
+                        </tr>
                         <tr>
                     <td>
                     <strong>Phone:</strong> </td><td><input type="tel" name="phone" value="" placeholder="Enter registered phone"></td>

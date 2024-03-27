@@ -2,7 +2,91 @@
 
     require_once('dfdb.php');
 
-    function loginFarmer($phone, $password){
+    function regAlluser($allusers){
+        $con=dbConnection();
+        $sql="insert into allusers values ('{$allusers['usertype']}','{$allusers['phone']}','{$allusers['name']}', '{$allusers['nid']}', '{$allusers['password']}', '','')";
+        
+        if(mysqli_query($con, $sql)){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+  
+    }
+
+    function userExist($uphone){
+        $con=dbConnection();
+        $sql="select * from allusers where phone='{$uphone}'";
+
+        $result=mysqli_query($con, $sql);
+        $count=mysqli_num_rows($result);
+
+        if($count>=1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    function loginFarmer($usertype, $phone, $password){
+        $con=dbConnection();
+        $sql="select * from allusers where urole='{$usertype}' and phone='{$phone}' and password='{$password}'";
+        $result=mysqli_query($con, $sql);
+        $count=mysqli_num_rows($result);
+
+        if ($count==1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    function loginWholesaler($usertype, $phone, $password){
+        $con=dbConnection();
+        $sql="select * from allusers where urole='{$usertype}' and phone='{$phone}' and password='{$password}'";
+        $result=mysqli_query($con, $sql);
+        $count=mysqli_num_rows($result);
+
+        if ($count==1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    function loginInvestor($usertype, $phone, $password){
+        $con=dbConnection();
+        $sql="select * from allusers where urole='{$usertype}' and phone='{$phone}' and password='{$password}'";
+        $result=mysqli_query($con, $sql);
+        $count=mysqli_num_rows($result);
+
+        if ($count==1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    function loginAdmin($usertype, $phone, $password){
+        $con=dbConnection();
+        $sql="select * from allusers where urole='{$usertype}' and phone='{$phone}' and password='{$password}'";
+        $result=mysqli_query($con, $sql);
+        $count=mysqli_num_rows($result);
+
+        if ($count==1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    /*function loginFarmer($phone, $password){
         $con=dbConnection();
         $sql="select * from farmers where phone='{$phone}' and password='{$password}'";
         $result=mysqli_query($con, $sql);
@@ -57,7 +141,7 @@
 
     function regFarmer($farmer){
         $con=dbConnection();
-        $sql="insert into farmers values ('{$farmer['phone']}','{$farmer['name']}', '{$farmer['nid']}', '{$farmer['password']}')";
+        $sql="insert into farmers values ('{$farmer['usertype']}','{$farmer['phone']}','{$farmer['name']}', '{$farmer['nid']}', '{$farmer['password']}', '','')";
         
         if(mysqli_query($con, $sql)){
             return true;
@@ -95,7 +179,36 @@
         }
 
   
+    }*/
+
+    function updateProfile($upprofile){
+        $con=dbConnection();
+        $sql="insert into investors values ({$investor['phone']}','{$investor['name']}', '{$investor['nid']}', '{$investor['password']}')";
+        
+        if(mysqli_query($con, $sql)){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+  
     }
 
+    function uImage(){
+
+        $con=dbConnection();
+        $sql="insert into investors values ({$investor['phone']}','{$investor['name']}', '{$investor['nid']}', '{$investor['password']}')";
+
+        if(mysqli_query($con, $sql)){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+
+   
 
     ?>

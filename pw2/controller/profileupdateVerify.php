@@ -1,12 +1,20 @@
 <?php
+
+    session_start();
+
+    if(!isset($_COOKIE['fflag'] || $_COOKIE['wflag'] || $_COOKIE['iflag' ||$_COOKIE['aflag']])){
+    header('location: dflogin.php');
+}
+
+
+
     require_once('../model/userModel.php');
     
-    $usertype=$_REQUEST['usertype'];
-    $phone = $_REQUEST['phone'];
+    $phone = $_GET['phone'];
     $name = $_REQUEST['name'];
     $nid=$_REQUEST['nid'];
     $password=$_REQUEST['password'];
-    $cfpassword=$_REQUEST['cfpassword'];
+    $image=$_REQUEST['image'];
 
     /*if($phone == "" || $name == "" || $email == ""){
         echo "Null username/password/email";
@@ -19,17 +27,15 @@
             echo "DB Error, please try again";
         }
     }*/
-    $userexist=['phone'=>$phone];
-    $uExist= userExist($userexist);
+
+
+    validImage();
     
-    if ($phone == "" || $name == "" || $nid == "" || $password == "" || $cfpassword == "") {
+    if ($name == "" || $nid == "" || $password == "") {
         echo "All fields are required";
 
     } 
-    else if (!preg_match('/^[0-9]{11}+$/', $phone)){
-        echo "Invalid Phone Number";
-    }
-    
+
     else if (!preg_match ("/^[a-zA-z\s]*$/", $name)){
         echo "Invalid Name input";
     }
@@ -41,29 +47,23 @@
         echo "Enter a Strong Password";
     }
 
-    else if ($password !== $cfpassword) {
-        echo "Password didn't Match! Try Again.";
-     }
-    else if (!isset($_POST['tnc'])){
-        echo "You have to agree with the T&C";
+    else if (!validImage()){
+        echo "Invalid Image (Format/File Size)";
+
     }
 
-    else if ($uExist){
-        echo "Phone number is already registered. Try with a different one";
-    }
     else {
     
         
-        $allusers=['usertype'=>$usertype, 'phone'=>$phone, 'name'=>$name, 'nid'=>$nid, 'password'=>$password];
+        $upprofile=['phone'=>$phone, 'name'=>$name, 'nid'=>$nid, 'password'=>$password, 'image'=>$image];
         //$sql = "INSERT INTO user VALUES('{$user['userid']}', '{$user['password']}', '{$user['name']}', '{$user['email']}'), '{$user['usertype']}')";
 
         //$status = mysqli_query($con, $sql);
-        $status=regAlluser($allusers);
-
+        $status=updateProfile($upprofile);
 
         if($status) {
             //$_SESSION['user'] = $user;
-            header('location: ../view/dflogin.php');
+            echo "<h2> Updatation Successful</h2>";
         } else {
             echo "<h2> Database Error! </h2>";
         }

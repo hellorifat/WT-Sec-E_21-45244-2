@@ -51,7 +51,7 @@
                     <br><br>
                     <tr align="center">
                     <td colspan="4" style="color:#873600; font-size:125%"><strong> Choose a Method:</strong></td>
-                        <td><a href="/pw2/view/mfsPay"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">MFS</button></a></td>
+                        <td><a href="/pw2/view/mfsPay.php"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">MFS</button></a></td>
                         <td><a href="/pw2/view/cardPay.php"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">CARD</button></a></td>
                     </tr>
 

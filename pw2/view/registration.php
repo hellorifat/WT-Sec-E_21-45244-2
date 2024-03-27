@@ -21,13 +21,21 @@
                 
     <form  style="width:50%" method="POST" action="../controller/regVerify.php" enctype="">
         <fieldset>
-            <legend><strong>Registering as a Farmer</strong></legend>
+            <legend><strong><h2>Register as</h2></strong></legend>
         <table>
+        <tr>
+                            <td colspan="2">
+                            <input type="radio" id="usertype" name="usertype" value="farmer" checked /> Farmer
+                            <input type="radio" id="usertype" name="usertype" value="wholesaler"/> Wholesaler
+                            <input type="radio" id="usertype" name="usertype" value="investor"/> Investor
+                            <input type="radio" id="usertype" name="usertype" value="admin"/> Admin
+</td>
+        </tr>
         <tr>
         <td>Phone number: </td> <td> <input type="tel" name="phone" value="" placeholder="Your phone no."></td>
 </tr>
 <tr>
-        <td>Name: </td> <td><input type="text" name="name" value="" placeholder="Your name"></td>
+        <td>Name: </td> <td><input type="text" name="name" value="" placeholder="Alif Hasan"></td>
         </tr><tr>
         <td>NID: </td> <td><input type="number" name="nid" value="" placeholder="10 digit Smart ID"></td>
         </tr><tr>
@@ -36,8 +44,8 @@
         <td>Confirm Password: </td><td><input style="height:20; width:40" type="password" name="cfpassword" value="" placeholder="Enter the password again">
         </tr><tr>
         <td colspan="2">
-        <input type="checkbox" id="vehicle1" name="tnc1" value="Bike" checked>
-        <label for="tnc1"> I agree to the <a href="#">terms and conditions</a></label><br><br>
+        <input type="checkbox" id="tnc" name="tnc" value="tncagreed" checked>
+        I agree to the <a href="#">terms and conditions</a><br><br>
         </tr><tr>
         <tr>
             <td colspan="2" align=right>

@@ -27,29 +27,16 @@
                 <br><br>
                 <table style="width:50%; height:100px" align="center" border=0px>
                     <tr align="center">
-                        <td colspan="4" style="color:#873600; font-size:125%"><strong> Already a Member? Log in as... </strong></td>
+                        <td style="color:#873600; font-size:125%"><strong> Already a Member?</strong></td>
+                        <td style="color:#873600; font-size:125%"><strong> Not a Member yet? </strong></td>
                     </tr>
                     <tr align="center">
-                        <td><a href="/pw2/view/dflogin.php"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">Farmer</button></a></td>
-                        <td><a href="/pw2/view/dwlogin.php"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">Wholesaler</button></a></td>
-                        <td><a href="/pw2/view/dilogin.php"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">Investor</button></a></td>
-                        <td><a href="/pw2/view/dalogin.php"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">Admin</button></a></td>
+                        <td><a href="/pw2/view/dflogin.php"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">Login Now</button></a></td>
+                        <td><a href="/pw2/view/registration.php"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">Register Here</button></a></td>
                     </tr>
 
                 </table>
                 <br><br>
-                <table style="width:40%; height:100px" align="center" border=0px>
-                    <tr align="center">
-                        <td colspan="3" style="color:#873600; font-size:125%"><strong> Not a Member yet? Register Now as... </strong></td>
-                    </tr>
-                    <tr align="center">
-                        <td><a href="/pw2/view/registration.php"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">Farmer</button></a></td>
-                        <td><a href="/pw2/view/dwreg.php"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">Wholesaler</button></a></td>
-                        <td><a href="/pw2/view/direg.php"> <button style="background-color:#0B5345; color: White; border:none; padding:10px 30px" type="button">Investor</button></a></td>
-                            
-                    </tr>
-
-                </table>
                 </td>
                 
                 <td style="width:20%; vertical-align: top"><strong>External Links</strong><br><ul>
@@ -60,7 +47,7 @@
                 </td>
                 </tr>
                 <tr>
-                    <td colspan="3" style="height:50px; text-align:center"> DigiFarm Copyright@2024</td>
+                    <td colspan="3" style="height:50px; text-align:center"> DigiFarm Copyright©2024</td>
                 </tr>
         </table>
     </body>
