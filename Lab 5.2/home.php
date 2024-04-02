@@ -10,7 +10,7 @@ session_start();
                 <tr style="height:150px">
                     <td align="left"><a href="#"><img src="dflogo.png" alt="XCompany" width="80" height="80"></a></td>
                     <td align="center"></td>
-                    <td align="right"><a href="#"> Home </a> | <a href="../login.php">Login</a> |  <a href="../registration.php">Registration</a><td>
+                    <td align="right"><a href="#"> Home </a> | <a href="../Lab 5.2/xlogin.php">Login</a> |  <a href="../Lab 5.2/xregistration.php">Registration</a><td>
 
                 </tr>
                 <tr style="height:600px" >
