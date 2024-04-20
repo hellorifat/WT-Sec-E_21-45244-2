@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <title>JS Example</title>
+</head>
+<body>
+        <h1>Hello JS</h1>
+
+        <input type="text" name="name" id="name" placeholder="Alif Hasan" onkeyup="nameValidation()"/>
+        <input type="button" name="click" value="Click" onclick="nameValidation()" />
+
+        <script>
+                function nameValidation(){
+                    let name=document.getElementsByID('name').value;
+
+                    if (name == "") {
+                        let obj= document.getElementsByTagName('h1')[0];
+                       obj.innerHTML = "Null data";
+                    } 
+
+                    else if ((name == name.trim() && name.indexOf(' ')== false) ) {
+                        let obj= document.getElementsByTagName('h1')[0];
+                        obj.innerHTML = "Must Contain Two Parts";
+                    }
+
+                    else {
+                        if ((name.count(  '@') > 0) || (name.count(  '_') > 0) || (name.count(  '#') > 0) || (name.count(  '$') > 0) 
+        || (name.count(  '%') > 0) || (name.count(  '/') > 0) || (name.count(  '*') > 0) || (name.count(  '+') > 0) 
+        || (name.count(  '(') > 0) || (name.count(  ')') > 0) || (name.count(  '!') > 0) || (name.count(  '^') > 0)
+        || (name.count(  '1') > 0) || (name.count(  '2') > 0) || (name.count(  '3') > 0) || (name.count(  '4') > 0) || (name.count(  '5') > 0)
+        || (name.count(  '6') > 0) || (name.count(  '7') > 0) || (name.count(  '8') > 0) || (name.count(  '9') > 0) || (name.count(  '0') > 0)) {
+
+            let obj= document.getElementsByTagName('h1')[0];
+            obj.innerHTML = "Validation Failed";;
+
+        }
+        else {
+            document.getElementsByTagName('h1')[0].innerHTML = name;
+        }
+        }
+
+                }
+        </script>
+</body>
+</html>
