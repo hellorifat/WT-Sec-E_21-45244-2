@@ -1,0 +1,31 @@
+<head>
+    <title>Name Validation</title>
+</head>
+    <body>
+        <h1>Name Validation</h1>
+        <input type="text" name="userid" id="user"/>
+        <input type="button" name="click" value="Click" onclick="nameValidation()" />
+
+        <script>
+            function nameValidation(){
+                let  uid=document.getElementById('userid').value;
+    
+                if ( uid == "") {
+                    alert ("Name Cannot Be Null");
+                } 
+
+                else if ((uid ==  name.trim() &&  uid.indexOf(' ')<=0) ) {
+                alert("Name Must Contain Two Parts");
+                
+                }
+
+                else {
+                    alert ("Congratulations! It's a valid name!");
+                }
+            
+            
+        }
+        </script>
+
+    </body>
+</html>

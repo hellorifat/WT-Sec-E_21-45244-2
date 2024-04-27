@@ -1,0 +1,90 @@
+<head>
+    <title>DOB Validation</title>
+</head>
+    <body>
+        <h1>DOB Validation</h1>
+        <input type="text" name="dob" id="dob" placeholder="mm-dd-yyyy"/>
+        <input type="button" name="click" value="Click" onclick="dobValidation()" />
+
+        <script>
+            function dobValidation(){
+                let dob=document.getElementById('dob').value;
+
+                dobs=dob.trim();
+    
+                
+
+                if (dob === "") {
+                    alert("Date Cannot Be Null");
+                    } 
+                    
+                else if (dob[3] === '0' || dob[3] === '1' || (dob[3] === '2' && dob[4] <= '8')) {
+                    if (dob[0] === '0' && dob[1] <= '9') {
+                        if ((dob[6] === '1' && dob[7] >= '0' && dob[8] > '0' && dob[9] >= '0') || (dob[6] === '2' && dob[7] === '0' && dob[8] <= '2' && dob[9] <= '4')) {
+                            alert("Valid1");
+                        } 
+                        else {
+                        alert("Invalid1");
+                    }
+  } else if (dob[0] === '1' && dob[1] <= '2') {
+    if ((dob[6] === '1' && dob[7] >= '0' && dob[8] > '0' && dob[9] >= '0') || (dob[6] === '2' && dob[7] === '0' && dob[8] <= '2' && dob[9] <= '4')) {
+        alert("Valid2");
+
+    } else {
+        alert("Invalid Date");
+
+    }
+  } else {
+    alert("Invalid1 Month");
+
+  }
+} else if ((dob[3] === '2' && dob[4] === '9') || (dob[3] === '3' && dob[4] <= '1')) {
+  if ((dob[0] === '0' && dob[1] <= '1') || (dob[0] === '0' && dob[1] >= '9')) {
+    if ((dob[6] === '1' && dob[7] >= '0' && dob[8] > '0' && dob[9] >= '0') || (dob[6] === '2' && dob[7] === '0' && dob[8] <= '2' && dob[9] <= '4')) {
+        alert("Valid3");
+
+        alert("Invalid Year");
+
+    }
+  } else if (dob[0] === '1' && dob[1] <= '2') {
+    if ((dob[6] === '1' && dob[7] >= '0' && dob[8] > '0' && dob[9] >= '0') || (dob[6] === '2' && dob[7] === '0' && dob[8] <= '2' && dob[9] <= '4')) {
+        alert("Valid4");;
+  
+    } else {
+        alert("Invalid Year 2");
+
+    }
+  } else {
+    alert("Invalid Month for Date. Cause It\'s february!");
+
+  }
+} else if (dob[3] === '3' && dob[4] <= '1') {
+  if (dob[0] === '0' && dob[1] <= '9') {
+    if ((dob[6] === '1' && dob[7] >= '0' && dob[8] > '0' && dob[9] >= '0') || (dob[6] === '2' && dob[7] === '0' && dob[8] <= '2' && dob[9] <= '4')) {
+      alert("It\'s Valid");
+
+    } else {
+      alert("Invalid Year");
+
+    }
+  } else if (dob[0] === '1' && dob[1] <= '2') {
+    if ((dob[6] === '1' && dob[7] >= '0' && dob[8] > '0' && dob[9] >= '0') || (dob[6] === '2' && dob[7] === '0' && dob[8] <= '2' && dob[9] <= '4')) {
+      alert("It\'s Valid");
+
+    } else {
+      alert("Invalid Date");
+
+    }
+  } else {
+    alert("Invalid Month");
+
+  }
+} else {
+  alert("Invalid Date");
+
+}      
+        }
+        </script>
+
+    </body>
+</html>

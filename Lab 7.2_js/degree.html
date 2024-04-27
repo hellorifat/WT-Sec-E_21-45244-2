@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Gender Validation</title>
+    </head>
+    <body>
+            <form onload="return validate()" name="edu">
+                <label><strong>Educational Qualification</strong></label><br>
+                <input type="checkbox" name="degree" value="ssc"> SSC
+              
+                <input type="checkbox" name="degree" value="hsc"> HSC
+              
+                <input type="checkbox" name="degree" value="bsc"> BSc <br>
+              
+                <input type="submit" name="submit" value="Submit" onclick="validate()">
+              </form>
+
+        <script>
+            function validate() {
+
+  var cbox = document.forms["edu"]["degree"];
+  if (cbox[0].checked == false && cbox[1].checked == false && cbox[2].checked == false) {
+    alert("Select atleast One Educational Qualification");
+    return false;
+} 
+
+else {
+    alert("Successfully Submited");
+    return true;
+  }
+}
+        </script>
+    </body>
+</html>

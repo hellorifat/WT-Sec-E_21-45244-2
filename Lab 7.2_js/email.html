@@ -1,0 +1,34 @@
+<head>
+    <title>Email Validation</title>
+</head>
+    <body>
+        <h1>Email Validation</h1>
+        <input type="text" name="useremail" id="useremail"/>
+        <input type="button" name="click" value="Click" onclick="emailValidation()" />
+
+        <script>
+                function emailValidation(){
+                    let useremail=document.getElementById('useremail').value;
+                    let atSymbol = useremail.indexOf("@");
+                    let dotSymbol = useremail.lastIndexOf(".");
+                    let spaceSymbol = useremail.indexOf(" ");
+ 
+                    if ((atSymbol != -1) &&
+                        (atSymbol != 0) &&
+                        (dotSymbol != -1) &&
+                        (dotSymbol != 0) &&
+                        (dotSymbol > atSymbol + 1) &&
+                        (useremail.length > dotSymbol + 1) &&
+                        (spaceSymbol == -1)) {
+                alert("Email address is valid.");
+            } else {
+                alert("Error !!! Email address is not valid.");
+                return false;
+            }
+                }
+
+            
+        </script>
+
+    </body>
+</html>

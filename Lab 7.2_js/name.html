@@ -1,44 +1,41 @@
-<html lang="en">
 <head>
-    <title>JS Example</title>
+    <title>Name Validation</title>
 </head>
-<body>
-        <h1>Hello JS</h1>
-
-        <input type="text" name="name" id="name" placeholder="Alif Hasan" onkeyup="nameValidation()"/>
+    <body>
+        <h1>Name Validation</h1>
+        <input type="text" name=" name" id=" name"/>
         <input type="button" name="click" value="Click" onclick="nameValidation()" />
 
         <script>
-                function nameValidation(){
-                    let name=document.getElementsByID('name').value;
+            function nameValidation(){
+                let  name=document.getElementById(' name').value;
+    
+                if ( name == "") {
+                    alert ("Name Cannot Be Null");
+                } 
 
-                    if (name == "") {
-                        let obj= document.getElementsByTagName('h1')[0];
-                       obj.innerHTML = "Null data";
-                    } 
-
-                    else if ((name == name.trim() && name.indexOf(' ')== false) ) {
-                        let obj= document.getElementsByTagName('h1')[0];
-                        obj.innerHTML = "Must Contain Two Parts";
-                    }
-
-                    else {
-                        if ((name.count(  '@') > 0) || (name.count(  '_') > 0) || (name.count(  '#') > 0) || (name.count(  '$') > 0) 
-        || (name.count(  '%') > 0) || (name.count(  '/') > 0) || (name.count(  '*') > 0) || (name.count(  '+') > 0) 
-        || (name.count(  '(') > 0) || (name.count(  ')') > 0) || (name.count(  '!') > 0) || (name.count(  '^') > 0)
-        || (name.count(  '1') > 0) || (name.count(  '2') > 0) || (name.count(  '3') > 0) || (name.count(  '4') > 0) || (name.count(  '5') > 0)
-        || (name.count(  '6') > 0) || (name.count(  '7') > 0) || (name.count(  '8') > 0) || (name.count(  '9') > 0) || (name.count(  '0') > 0)) {
-
-            let obj= document.getElementsByTagName('h1')[0];
-            obj.innerHTML = "Validation Failed";;
-
-        }
-        else {
-            document.getElementsByTagName('h1')[0].innerHTML = name;
-        }
-        }
-
+                else if (( name ==  name.trim() &&  name.indexOf(' ')<=0) ) {
+                alert("Name Must Contain Two Parts");
+                
                 }
+                else {
+
+                if (( name.indexOf('@') > 0) || ( name.indexOf(  '_') > 0) || ( name.indexOf(  '#') > 0) || ( name.indexOf(  '$') > 0) 
+                    || ( name.indexOf(  '%') > 0) || ( name.indexOf(  '/') > 0) || ( name.indexOf(  '*') > 0) || ( name.indexOf('+') > 0) 
+                    || ( name.indexOf(  '(') > 0) || ( name.indexOf(  ')') > 0) || ( name.indexOf(  '!') > 0) || ( name.indexOf('^') > 0)
+                    || ( name.indexOf(  '1') > 0) || ( name.indexOf(  '2') > 0) || ( name.indexOf(  '3') > 0) || ( name.indexOf('4') > 0) || ( name.indexOf('5') > 0)
+                    || ( name.indexOf( '6') > 0) || ( name.indexOf( '7') > 0) || ( name.indexOf( '8') > 0) || ( name.indexOf('9') > 0) || ( name.indexOf('0') > 0)) {
+
+                alert ("Sorry! Validation failed: Name can contain alphabets, period and dash only!");
+                }
+
+                else {
+                    alert ("Congratulations! It's a valid name!");
+                }
+            }
+            
+        }
         </script>
-</body>
+
+    </body>
 </html>

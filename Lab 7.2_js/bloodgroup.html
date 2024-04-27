@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Gender Validation</title>
+    </head>
+    <body>
+            <select id="bg">
+                <option value="">Select</option>
+                <option value="A+">A+</option>
+                <option value="A+">B+</option>
+                <option value="A+">O+</option>
+            </select>
+            <button onclick="selectBG()">Submit</button>
+
+        <script>
+            function selectBG() {
+                var bg=document.getElementById("bg");
+                if (bg.value===""){
+                    alert("Select Your Blood Group");
+                }
+                else{
+                alert ("Your Blood Group is:".concat(" ",bg.value));
+                }
+
+}
+        </script>
+    </body>
+</html>
