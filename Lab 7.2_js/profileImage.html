@@ -1,29 +1,26 @@
 <head>
-    <title>Name Validation</title>
+    <title>Image Validation</title>
 </head>
     <body>
-        <h1>Name Validation</h1>
-        <input type="text" name="userid" id="user"/>
-        <input type="button" name="click" value="Click" onclick="nameValidation()" />
+        <h1>Image Validation</h1>
+        User ID: <input type="text" name="userid" id="userid" value=""><br><br>
+        Profile Picture <input type="file" name="myimg" id="myimg" value=""><br><br>
+        <input type="button" name="submit" value="Upload Image" onclick="fileupValidation()">
+
 
         <script>
-            function nameValidation(){
+            function fileupValidation(){
                 let  uid=document.getElementById('userid').value;
+                let myimg=document.getElementById('myimg');
     
-                if ( uid == "") {
-                    alert ("Name Cannot Be Null");
+                if (uid == "") {
+                    alert ("Userid Cannot Be Null");
                 } 
-
-                else if ((uid ==  name.trim() &&  uid.indexOf(' ')<=0) ) {
-                alert("Name Must Contain Two Parts");
-                
+                if (myimg.files.length==0){
+                    alert ("Select Your Profile Image");
                 }
+                else alert ("Upload Successful");
 
-                else {
-                    alert ("Congratulations! It's a valid name!");
-                }
-            
-            
         }
         </script>
 
