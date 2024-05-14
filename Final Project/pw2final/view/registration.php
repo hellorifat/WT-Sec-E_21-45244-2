@@ -20,16 +20,16 @@
                 <td style="width:60%; vertical-align: top" align="center">
                 <br>
                 
-                <form  name ="regform" onsubmit="return validateForm()" style="width:50%" method="POST" action="../controller/regVerify.php" enctype="">
+                <form  name ="regform"  onsubmit= "return validateForm()" style="width:50%" method="POST" action="" enctype="">
         <fieldset>
             <legend><strong><h2 style="color:#b1e21f">Register as</h2></strong></legend>
                 <table>
                     <tr>
                         <td colspan="2">
-                            <input type="radio" id="usertype" name="usertype" value="farmer" checked /> <label class="form-label">Farmer<label>
-                            <input type="radio" id="usertype" name="usertype" value="wholesaler"/> <label class="form-label">Wholesaler<label>
-                            <input type="radio" id="usertype" name="usertype" value="investor"/> <label class="form-label">Investor<label>
-                            <input type="radio" id="usertype" name="usertype" value="admin"/> <label class="form-label">Admin<label>
+                            <input type="radio" id="usertype1" name="usertype" value="farmer" checked /> <label class="form-label">Farmer<label>
+                            <input type="radio" id="usertype2" name="usertype" value="wholesaler"/> <label class="form-label">Wholesaler<label>
+                            <input type="radio" id="usertype3" name="usertype" value="investor"/> <label class="form-label">Investor<label>
+                            <input type="radio" id="usertype4" name="usertype" value="admin"/> <label class="form-label">Admin<label>
                         </td>
                     </tr>
                     <tr>
@@ -94,7 +94,7 @@
                     
                     <tr>
                         <td colspan="2" align=center>
-                            <input type="submit" name="submit" value="Register" class="loginButton" >
+                            <input type="submit" name="submit" value="Register" class="loginButton" onclick="dfajaxpostmulti()" >
                         </td>
                     </tr>
 
@@ -124,26 +124,6 @@
 
 
         <script src="script.js">
-
-            function regajax(){
-                let usertype=document.getElementByID('usertype').value;
-                let phone=document.getElementByID('phone').value;
-                let name=document.getElementByID('name').value;
-                let nid=document.getElementByID('nid').value;
-                let password=document.getElementByID('password').value;
-                let cfpassword=document.getElementByID('cfpassword').value;
-                
-                let xhttp=new XMLHttpRequest();
-                xhttp.open("POST", '../controller/regVerify.php?usertype='+usertype+"&phone"+phone+"&name"+name+"&nid"+nid+"&password"+password+"&cfpassword"+cfpassword, true);
-                xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-                xhttp.send();
-                xhttp.onreadystatechange=function(){
-                    if (this.readyState==4 & this.status==200){
-                        alert(this.responseText);
-                    }
-                }
-
-            }
         </script>
 
     </body>

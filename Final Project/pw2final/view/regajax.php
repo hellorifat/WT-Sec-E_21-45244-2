@@ -1,17 +1,14 @@
 <?php
     require_once('../model/userModel.php');
-
-    $usertype = $_REQUEST['usertype'];
+    
+    $usertype=$_REQUEST['usertype'];
     $phone = $_REQUEST['phone'];
     $name = $_REQUEST['name'];
-    $nid = $_REQUEST['nid'];
-    $password = $_REQUEST['password'];
+    $nid=$_REQUEST['nid'];
+    $password=$_REQUEST['password'];
+    $cfpassword=$_REQUEST['cfpassword'];
 
-    
-
-
-
-    /*$userexist=['phone'=>$phone];
+    $userexist=['phone'=>$phone];
     //$uExist= userExist($userexist);
     
     $allusers=['usertype'=>$usertype, 'phone'=>$phone, 'name'=>$name, 'nid'=>$nid, 'password'=>$password];
@@ -22,12 +19,12 @@
 
     if($status) {
             //$_SESSION['user'] = $user;
-        //header('location: ../view/dflogin.php');
+        header('location: ../view/dflogin.php');
         echo "Done";
             
     } else {
         echo "<h2> Database Error! </h2>";
-    }*/
-    echo "Form Done".$phone.$name.$usertype.$nid.$password;
+    }
+        
     
 ?>

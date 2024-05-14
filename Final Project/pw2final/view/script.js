@@ -1,27 +1,100 @@
+function regajax(){
+
+    let phone=document.getElementById('phone').value;
+
+    let xhttp=new XMLHttpRequest();
+    xhttp.open("GET", '../controller/regajaxtest.php?phone='+phone,true);
+    xhttp.send();
+
+    xhttp.onreadystatechange=function(){
+        if(this.readyState==4 & this.status==200){
+            alert(this.responseText);
+        }
+    }
+    
+}
+
+function dfajax(){
+
+    let phone=document.getElementById('phone').value;
+
+    let xhttp=new XMLHttpRequest();
+    xhttp.open("GET", '../controller/regajax.php?phone='+phone,true);
+    xhttp.send();
+
+    xhttp.onreadystatechange=function(){
+        if(this.readyState==4 & this.status==200){
+            alert(this.responseText);
+        }
+    }
+    
+}
+
+function dfajaxpost(){
+
+    let phone=document.getElementById('phone').value;
+
+    let xhttp=new XMLHttpRequest();
+    xhttp.open("POST", '../controller/regajax.php', true);
+    xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhttp.send('phone='+phone);
+    xhttp.onreadystatechange=function(){
+        if (this.readyState==4 & this.status==200){
+            alert(this.responseText);
+
+        }
+    }
+    
+}
+
+
+function dfajaxpostmulti(){
+
+    let usertype=document.getElementById('usertype1').value;
+    let phone=document.getElementById('phone').value;
+    let name=document.getElementById('name').value;
+    let nid=document.getElementById('nid').value;
+    let password=document.getElementById('password').value;
+    let cfpassword=document.getElementById('cfpassword').value;
+    
+
+    let xhttp=new XMLHttpRequest();
+    xhttp.open("POST", '../controller/regVerify.php', true);
+    xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhttp.send('usertype='+usertype+'&phone='+phone+'&name='+name+'&nid='+nid+'&password='+password+'&cfpassword='+cfpassword);
+    xhttp.onreadystatechange=function(){
+        if (this.readyState==4 & this.status==200){
+            alert(this.responseText);
+
+        }
+    }
+    
+}
+
+
+
 function ajax(){
-    let usertype = document.getElementById('usertype').value;
+    let usertype = document.getElementByName('usertype').value;
     let phone = document.getElementById('phone').value;
     let name = document.getElementById('name').value;
     let nid = document.getElementById('nid').value;
     let password = document.getElementById('phone').value;
     let cfpassword = document.getElementById('cfpassword').value;   
     let tnc = document.getElementById('tnc').value;  
-    
-    
 
 
-    let xhttp = new XMLHttpRequest();
-        xhttp.open("POST", '../controller/regajax.php', true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send('usertype='+usertype+"&"+'phone='+phone+"&"+'name='+name+"&"+'nid='+nid+"&"+'password='+password+"&"+'cfpassword='+cfpassword+"&"+'tnc='+tnc);
-
-        xhttp.onreadystatechange = function (){
-        if(this.readyState == 4 & this.status == 200){
-                        alert(this.responseText);
-            //document.getElementsByTagName('h1')[0].innerHTML = this.responseText; 
+            let xhttp=new XMLHttpRequest();
+            xhttp.open("POST", '../controller/regajax.php', true);
+            xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xhttp.send('phone='+phone+'&name='+name);
+            xhttp.send('usertype='+usertype+'&phone='+phone+'&name='+name+'&nid='+nid+'&password'+password+'&cfpassword'+cfpassword+'&tnc'+tnc);
+            xhttp.onreadystatechange=function(){
+                if (this.readyState==4 & this.status==200){
+                    alert(this.responseText);
+        
+                }
+            }
 }
-        }
-    }
 
 function nameValidation(){
     let name=document.getElementById('name').value;
@@ -43,10 +116,6 @@ function nameValidation(){
         || ( name.indexOf( '6') > 0) || ( name.indexOf( '7') > 0) || ( name.indexOf( '8') > 0) || ( name.indexOf('9') > 0) || ( name.indexOf('0') > 0)) {
 
     alert ("Sorry! Validation failed: Name can contain alphabets, period and dash only!");
-    }
-
-    else {
-        alert ("Congratulations! It's a valid name!");
     }
 }
 
@@ -134,9 +203,7 @@ function validateForm() {
                 nameError.textContent="Invalid! Name can contain alphabets, periods and dashes only!";
                 isValid=false;
             }
-            else {
-                nameError.textContent="Congratulations! It's a valid name!";
-            }
+            
         }
 
 

@@ -7,7 +7,8 @@
     $nid=$_REQUEST['nid'];
     $password=$_REQUEST['password'];
     $cfpassword=$_REQUEST['cfpassword'];
-
+    
+    
     /*if($phone == "" || $name == "" || $email == ""){
         echo "Null username/password/email";
     }else {
@@ -19,8 +20,8 @@
             echo "DB Error, please try again";
         }
     }*/
-    $userexist=['phone'=>$phone];
-    $uExist= userExist($userexist);
+    //$userexist=['phone'=>$phone];
+    //$uExist= userExist($userexist);
     
     if ($phone == "" || $name == "" || $nid == "" || $password == "" || $cfpassword == "") {
         echo "All fields are required";
@@ -29,14 +30,12 @@
     else if (strlen($phone)<=10){
         echo "Invalid Phone Number";
     }
-    
-    
-
-    else if (($name.count('@') > 0) || ($name.count('_') > 0) || ($name.count(  '#') > 0) || ($name.count(  '$') > 0) 
-    || ($name.count(  '%') > 0) || ($name.count(  '/') > 0) || ($name.count(  '*') > 0) || ($name.count(  '+') > 0) 
-    || ($name.count(  '(') > 0) || ($name.count(  ')') > 0) || ($name.count(  '!') > 0) || ($name.count(  '^') > 0)
-    || ($name.count(  '1') > 0) || ($name.count(  '2') > 0) || ($name.count(  '3') > 0) || ($name.count(  '4') > 0) || ($name.count(  '5') > 0)
-    || ($name.count(  '6') > 0) || ($name.count(  '7') > 0) || ($name.count(  '8') > 0) || ($name.count(  '9') > 0) || ($name.count(  '0') > 0)) {
+ 
+    else if ((substr_count($name, '@') > 0) || (substr_count($name, '_') > 0) || (substr_count($name, '#') > 0) || (substr_count($name, '$') > 0) 
+    || (substr_count($name, '%') > 0) || (substr_count($name, '/') > 0) || (substr_count($name, '*') > 0) || (substr_count($name, '+') > 0) 
+    || (substr_count($name, '(') > 0) || (substr_count($name, ')') > 0) || (substr_count($name, '!') > 0) || (substr_count($name, '^') > 0)
+    || (substr_count($name, '1') > 0) || (substr_count($name, '2') > 0) || (substr_count($name, '3') > 0) || (substr_count($name, '4') > 0) || (substr_count($name, '5') > 0)
+    || (substr_count($name, '6') > 0) || (substr_count($name, '7') > 0) || (substr_count($name, '8') > 0) || (substr_count($name, '9') > 0) || (substr_count($name, '0') > 0)) {
 
         echo "Name can contain alphabets, period and dash only!";
 
@@ -45,41 +44,41 @@
     else if (strlen($nid)<=9){
         echo "Invalid NID Number";
     }
-    else if(($password.count('@')<0) || ($password.count('#')<0) || ($password.count('!')<0) ||($password.count('$')<0) ||($password.count('%')<0) ||($password.count('^')<0) ||($password.count('&')<0) ||
-    ($password.count('*')<0) ||($password.count('(\)')<0) || ($password.count('+')<0) ||($password.count('-')<0) ||($password.count('.')<0) ||($password.count(',')<0) ||($password.count(';')<0) ||
-    ($password.count(':')<0) ||($password.count('_')<0)){
+    else if((substr_count($password, '@')<0) || (substr_count($password,'#')<0) || (substr_count($password,'!')<0) ||(substr_count($password,'$')<0) ||(substr_count($password,'%')<0) ||(substr_count($password,'^')<0) ||(substr_count($password,'&')<0) ||
+    (substr_count($password,'*')<0) ||(substr_count($password,'(\)')<0) || (substr_count($password,'+')<0) ||(substr_count($password,'-')<0) ||(substr_count($password,'.')<0) ||(substr_count($password,',')<0) ||(substr_count($password,';')<0) ||
+    (substr_count($password,':')<0) ||(substr_count($password,'_')<0)){
         echo "Incluse a Special Character";
     }
 
-    else if(($password.count('0')<0) || ($password.count('1')<0) || ($password.count('2')<0) ||($password.count('3')<0) ||($password.count('4')<0) ||($password.count('5')<0) ||($password.count('6')<0) ||
-    ($password.count('7')<0) ||($password.count('8')<0) || ($password.count('9')<0)){
+    else if((substr_count($password,'0')<0) || (substr_count($password,'1')<0) || (substr_count($password,'2')<0) ||(substr_count($password,'3')<0) ||(substr_count($password,'4')<0) ||(substr_count($password,'5')<0) ||(substr_count($password,'6')<0) ||
+    (substr_count($password,'7')<0) ||(substr_count($password,'8')<0) || (substr_count($password,'9')<0)){
         echo "Password Must Contain Digits";
     }
 
-    else if(($password.count('a')<0) || ($password.count('b')<0) || ($password.count('c')<0) ||($password.count('d')<0) ||($password.count('e')<0) ||($password.count('f')<0) ||($password.count('g')<0) ||
-    ($password.count('h')<0) ||($password.count('i')<0) || ($password.count('j')<0) ||($password.count('k')<0) ||($password.count('l')<0) ||($password.count('m')<0) ||($password.count('n')<0) ||
-    ($password.count('o')<0) ||($password.count('p')<0)||($password.count('q')<0)||($password.count('r')<0)||($password.count('s')<0)||($password.count('t')<0)||($password.count('u')<0)||
-    ($password.count('v')<0)||($password.count('w')<0)||($password.count('x')<0)||($password.count('y')<0)||($password.count('z')<0)){
+    else if((substr_count($password,'a')<0) || (substr_count($password,'b')<0) || (substr_count($password,'c')<0) ||(substr_count($password,'d')<0) ||(substr_count($password,'e')<0) ||(substr_count($password,'f')<0) ||(substr_count($password,'g')<0) ||
+    (substr_count($password,'h')<0) ||(substr_count($password,'i')<0) || (substr_count($password,'j')<0) ||(substr_count($password,'k')<0) ||(substr_count($password,'l')<0) ||(substr_count($password,'m')<0) ||(substr_count($password,'n')<0) ||
+    (substr_count($password,'o')<0) ||(substr_count($password,'p')<0)||(substr_count($password,'q')<0)||(substr_count($password,'r')<0)||(substr_count($password,'s')<0)||(substr_count($password,'t')<0)||(substr_count($password,'u')<0)||
+    (substr_count($password,'v')<0)||(substr_count($password,'w')<0)||(substr_count($password,'x')<0)||(substr_count($password,'y')<0)||(substr_count($password,'z')<0)){
         echo "Password Must Contain Lowercase";
     }
 
-    else if(($password.count('A')<0) || ($password.count('B')<0) || ($password.count('C')<0) ||($password.count('D')<0) ||($password.count('E')<0) ||($password.count('F')<0) ||($password.count('G')<0) ||
-    ($password.count('H')<0) ||($password.count('I')<0) || ($password.count('J')<0) ||($password.count('K')<0) ||($password.count('L')<0) ||($password.count('M')<0) ||($password.count('N')<0) ||
-    ($password.count('O')<0) ||($password.count('P')<0)||($password.count('Q')<0)||($password.count('R')<0)||($password.count('S')<0)||($password.count('T')<0)||($password.count('U')<0)||
-    ($password.count('V')<0)||($password.count('W')<0)||($password.count('X')<0)||($password.count('Y')<0)||($password.count('Z')<0)){
+    else if((substr_count($password,'A')<0) || (substr_count($password,'B')<0) || (substr_count($password,'C')<0) ||(substr_count($password,'D')<0) ||(substr_count($password,'E')<0) ||(substr_count($password,'F')<0) ||(substr_count($password,'G')<0) ||
+    (substr_count($password,'H')<0) ||(substr_count($password,'I')<0) || (substr_count($password,'J')<0) ||(substr_count($password,'K')<0) ||(substr_count($password,'L')<0) ||(substr_count($password,'M')<0) ||(substr_count($password,'N')<0) ||
+    (substr_count($password,'O')<0) ||(substr_count($password,'P')<0)||(substr_count($password,'Q')<0)||(substr_count($password,'R')<0)||(substr_count($password,'S')<0)||(substr_count($password,'T')<0)||(substr_count($password,'U')<0)||
+    (substr_count($password,'V')<0)||(substr_count($password,'W')<0)||(substr_count($password,'X')<0)||(substr_count($password,'Y')<0)||(substr_count($password,'Z')<0)){
         echo "Password Must Contain Uppercase";
     }
 
     else if ($password !== $cfpassword) {
         echo "Password didn't Match! Try Again.";
      }
-    else if (!isset($_POST['tnc'])){
+    /*else if (!isset($_POST['tnc'])){
         echo "You have to agree with the T&C";
     }
 
     else if ($uExist){
         echo "Phone number is already registered. Try with a different one";
-    }
+    }*/
     else {
     
         
@@ -99,4 +98,19 @@
         }
         
     }
+
+/*$allusers=['usertype'=>$usertype, 'phone'=>$phone, 'name'=>$name, 'nid'=>$nid, 'password'=>$password];
+        //$sql = "INSERT INTO user VALUES('{$user['userid']}', '{$user['password']}', '{$user['name']}', '{$user['email']}'), '{$user['usertype']}')";
+
+        //$status = mysqli_query($con, $sql);
+        $status=regAlluser($allusers);
+
+
+        if($status) {
+            //$_SESSION['user'] = $user;
+            echo"Registration Successful";
+            //header('location: ../view/dflogin.php');
+        } else {
+            echo "<h2> Database Error! </h2>";
+        }*/
 ?>
